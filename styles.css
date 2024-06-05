@@ -1,0 +1,316 @@
+/* Make more efficient with grouping selectors */
+
+.pianoBackground,.selectIndicators,.loginButtons,#pianoImage,select,.iconButton,#screen input,hr {
+  width:100%;
+}
+
+body,.pianoBackground {
+  background-image:url("piano.jpg");
+}
+
+.pianoBackground,#pianoImage {
+  left:0;
+  box-shadow: 0px 15px 20px #382214 inset, 0px -15px 20px #382214 inset, 0px 5px 25px black;
+}
+
+.pianoBackground,.whiteKey,.blackKey,input,select,button,.formElements,.button {
+  overflow:hidden;
+}
+
+.pianoBackground,.whiteKey,.blackKey,#pianoImage {
+  position:absolute;
+}
+
+.selectIndicators,#pianoImage,#screen,#halfScreen,.audioInfo {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+input[type="submit"],select,option,button,.whiteKey,.blackKey {
+  cursor:pointer;
+}
+
+input:disabled,select:disabled,button:disabled,i,#favouriteForm {
+  color:black;
+}
+
+.keyboardUI,.iconButton,.formStart,.formEnd,#halfScreen {
+  height:100%;
+}
+
+i,.audioInfo {
+  font-size:200%;
+}
+
+#screen input,#passwordAssist,::placeholder,.audioInfo,#screen i {
+  color:red;
+}
+
+input,select,button,#screen i {
+  font-size:125%;
+}
+
+#screen input,.audioInfo {
+  border:2px dashed red;
+}
+
+#halfScreen,.formStart,.formEnd {
+  width:50%;
+}
+
+#screen input,.audioInfo {
+  text-align:center;
+}
+
+/* Style body */
+body {
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+  z-index:2;
+  cursor:default;
+}
+
+.pianoBackground {
+  padding:0;
+  box-shadow: 0px -15px 20px #24160c inset;
+  transition: height 1.5s , bottom 1.5s;
+  /* Get height and displacement from bottom of page */
+  /* Set from javascript */
+  height:var(--height);
+  bottom:var(--fromBottom);
+}
+
+.whiteKey,.blackKey {
+  margin-top:0.5%;
+  margin-bottom:0.5%;
+  border-radius:20%/7%;
+  transition-duration:0.2s;
+  right:0;
+  /* Get width and indent to the left */
+  /* Set from javascript */
+  width:var(--keyWidth);
+  left:var(--indentLeft);
+}
+
+.whiteKey {
+  background-image: linear-gradient(to right,#636363 2%,#e6e6e6 80%,white 98%);
+  height:97%;
+  box-shadow: 0px 10px 10px black;
+  z-index:0;
+}
+
+.whiteKey.pressed {
+  box-shadow: 0px 10px 10px black, -4px 5px 10px #212121 inset, 1px 5px 5px #212121 inset, -1px 5px 9999px rgba(0,0,0,0.3) inset;
+}
+
+.blackKey {
+  background-image: linear-gradient(to right,black 2%,#1f1f1f 80%,#5c5c5c 98%);
+  box-shadow: -10px 5px 10px #636363, -10px 0px 10px #636363;
+  height:50%;
+  z-index:1;
+}
+
+.blackKey.pressed {
+  box-shadow: -5px 0px 20px #636363, -5px 0px 5px #636363, -1px 5px 9999px rgba(0,0,0,0.7) inset;
+}
+
+#selectIndicator,#loginButtons {
+  float:right;
+  height:25%;
+}
+
+#loginButtons {
+  width:100px;
+}
+
+#selectIndicator {
+  width:30px;
+}
+
+.selectIndicators,.loginButtons {
+  height:20%;
+  margin-bottom:2%;
+}
+
+.innerSelectIndicators{
+  background-image: radial-gradient(#07521c 2%,#053011 50%,#000000 80%);
+  border-radius:100%;
+  width:10px;
+  height:10px;
+  border: 1px solid #26180c;
+}
+
+.innerSelectIndicators.lightUp {
+  background-image:radial-gradient(#00ff48 2%,#03a631 50%,#000000 80%);
+}
+
+#pianoImage {
+  height:10%;
+  bottom:47%;
+  z-index:4;
+}
+
+input,select,button {
+  border-radius: 5px;
+  background-image: linear-gradient(to right,#a66a16 2%,#ffaa33 80%,#ffb957 98%);
+  box-shadow: 5px 5px 10px #a66a16 inset, -5px -5px 10px #a66a16 inset;
+  border: 3px solid #26180c;
+  outline: none;
+}
+
+input:disabled,select:disabled,button:disabled {
+  opacity:1;
+  background-image: linear-gradient(to right,#694410 2%,#452c0a 80%,#291a06 98%);
+  box-shadow: 5px 5px 10px #452c0a inset, -5px -5px 10px #452c0a inset;
+  border: 3px solid #000000;
+  cursor:not-allowed;
+}
+
+option {
+  background-color:#ffaa33;
+}
+
+.formElements {
+  height:60%;
+  margin:2%;
+  width:30%;
+}
+
+.formStart,.formEnd {
+  display:flex;
+  align-items:center;
+}
+
+.formStart {
+  justify-content:flex-start;
+}
+
+.formEnd {
+  justify-content:flex-end;
+}
+
+.button {
+  width:50px;
+}
+
+.iconButton {
+  font-size:100%;
+}
+
+.playButton {
+  width:55px;
+  margin:5%;
+}
+
+#screen {
+  background-color:#2b0e10;
+  width:auto;
+  height:40%;
+  margin-left:2%;
+  display:absolute;
+  border: 3px solid black;
+  box-shadow: 5px 5px 10px #1c0607 inset, -5px -5px 10px #1c0607 inset;
+  font-family: "Press Start 2P", sans-serif;
+  text-shadow: 2px 2px 5px #a4231d;
+}
+
+#screen input {
+  background:transparent;
+  box-shadow:none;
+  height:15%;
+  margin-bottom:5%;
+  box-shadow: 2px 2px 5px #a4231d;
+}
+
+#screen input[type="submit"] {
+  background:rgba(164,35,29,0.3);
+  margin-bottom:0;
+  border:2px solid red;
+}
+
+::placeholder {
+  opacity:0.5;
+}
+
+.loginInput {
+  width:80%;
+}
+
+.audioInfo {
+  width:85%;
+  height:80%;
+}
+
+#currentNote {
+  margin-right:5%;
+}
+
+#scaleTypeInfo {
+  margin-left:5%;
+}
+
+#scaleTypeInfo div div {
+  margin-bottom:2%;
+}
+
+.audioInfo > div {
+  width:90%;
+}
+
+hr {
+  height:0px;
+  border: 1px dashed red;
+}
+
+#screen i {
+  margin-right:2%;
+}
+
+#passwordAssist > div {
+  height: 15%;
+}
+
+#unfavouriteIcon {
+  display:none;
+}
+
+/* Change screen interface to stack vertically on a smaller screen */
+/* AH Concept: media queries */
+@media only screen and (max-width:1000px) {
+
+  #halfScreen,#screen input {
+    width:100%;
+  }
+
+  .audioInfo,#screen input {
+    font-size: 100%;
+  }
+
+  #screen {
+    flex-direction:column;
+  }
+
+  #halfScreen {
+    height:50%;
+  }
+
+  #currentNote {
+    margin-right:0%;
+  }
+
+  #scaleTypeInfo {
+    margin-left:0%;
+  }
+
+  #screen input {
+    height:20%;
+    margin-bottom:0%;
+    margin-top:2%;
+  }
+
+  #passwordAssist > div {
+    font-size:80%;
+  }
+
+}
