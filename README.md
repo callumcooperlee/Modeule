@@ -8,7 +8,7 @@ Full documentation has been provided and a demo video which can also be found at
   <li>Download files or fork and clone into C:\xampp\htdocs\Modeule</li>
   <li>Start the XAMPP Control Panel and click start for Apache and MySQL</li>
   <li>Navigate to http://localhost/phpmyadmin</li>
-  <li>Create a database named 'ah project'</li>
+  <li>Create a database named 'Modeule'</li>
   <li>Create a user with username 'username' and password 'password'</li>
   <li>Use the SQL below to create apropriate tables</li>
 </ul>
