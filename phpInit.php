@@ -26,5 +26,5 @@ function dbConnect($host,$db_username,$db_password,$database) {
 }
 
 // Connect to database with correct data
-dbConnect("localhost","160688033","160688033","AH Project");
+dbConnect("localhost","username","password","Modeule");
 ?>
